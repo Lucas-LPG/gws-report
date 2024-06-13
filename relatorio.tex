@@ -84,7 +84,7 @@
     \and
     \IEEEauthorblockN{Renan Czervinski, }
     \and
-    \IEEEauthorblockN{Tiago Follador, }
+    \IEEEauthorblockN{Tiago Follador }
 }
 \date{}
 
@@ -529,7 +529,16 @@ IMAGEM IMAGEM IMGAGEM
 \end{figure}
 
 \subsection{Banco de dados}
-\subsubsection{Flask Login}
+Durante o desenvolvimento do projeto, a implementação do sistema de login passou por uma significativa evolução. Inicialmente, a verificação de usuários era realizada sem o uso de banco de dados, utilizando apenas dicionários em Python para armazenar informações básicas de login.
+
+Antes: No início, o sistema de login utilizava dicionários em Python para verificar as credenciais dos usuários. Este método era simples e rápido de implementar, mas apresentava limitações em termos de escalabilidade e segurança.
+As informações dos usuários, como nomes de usuário e senhas, eram armazenadas diretamente no código, o que não é uma prática recomendada para sistemas em produção.
+
+Depois: Com a evolução do projeto, migramos o sistema de login para utilizar um banco de dados MySQL. Esta mudança permitiu um armazenamento mais seguro e escalável das informações dos usuários.
+Criamos tabelas específicas para armazenar os dados dos usuários e suas respectivas roles. Os usuários são agora categorizados em diferentes roles, como admin, user e operario. Isso permite um controle de acesso mais refinado e seguro, onde cada role tem permissões e funcionalidades específicas dentro da aplicação.
+A integração com o banco de dados também nos possibilitou implementar práticas de segurança mais robustas, como a utilização de tokens para sessões de login.
+A evolução do Flask Login reflete nosso compromisso em melhorar a segurança, escalabilidade e usabilidade da aplicação. Ao migrar de um sistema baseado em dicionários para um banco de dados estruturado, conseguimos oferecer um sistema de autenticação mais robusto e confiável para nossos usuários.
+
 
 \section{Discussão}
 \label{sec:discussion}
