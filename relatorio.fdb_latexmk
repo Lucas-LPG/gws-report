@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1718154107.87739 0
+["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1718317151.119 0
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1440712899 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
   "references.bib" 0 -1 0 ""
   "relatorio.aux" 0 -1 0 "pdflatex"
@@ -7,8 +7,8 @@
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1718154107.03043 "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/relatorio/relatorio.tex" "relatorio.pdf" "relatorio" 1718154107.87751 0
-  "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/relatorio/relatorio.tex" 1718154060.08792 33887 1591d045d7787334c5ef2d6fb05deaa0 ""
+["pdflatex"] 1718317149.47083 "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex" "relatorio.pdf" "relatorio" 1718317151.11919 0
+  "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex" 1718317147.71281 42143 3775a48252d2c921fef5439e08d2c5b2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -22,6 +22,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm" 1136768653 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm" 1136768653 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm" 1136768653 2288 f478fc8fed18759effb59f3dad7f3084 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm" 1136768653 4640 532ca3305aad10cc01d769f3f91f1029 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm" 1136768653 6944 94c55ad86e6ea2826f78ba2240d50df9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -46,9 +47,11 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1136849748 46026 6dab18b61c907687b520c72847215a68 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf" 1136768653 2184 8475af1b9cfa983db5f46f5ed4b8f9f7 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf" 1136768653 2340 df9c920cc5688ebbf16a93f45ce7bdd3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf" 1136768653 2348 91706c542228501c410c266421fbe30c ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf" 1136768653 2328 6cd7df782b09b29cfc4d93e55b6b9a59 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -133,13 +136,18 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1717492343.51848 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1717492299 8221435 86513c8c313e2979ccf93fc953c37103 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "images/despair.jpg" 1718154094.23261 87494 69c8e0ac48789d6ef937f65d20295055 ""
-  "images/help.jpeg" 1718154094.23372 54490 02d8ef80097479b1cc465d046b7affae ""
-  "images/schizo.jpeg" 1718154094.23618 47013 8cae912a53c667b1b1c464fb1cfd2d05 ""
-  "relatorio.aux" 1718154107.65119 5004 b1c8736b77badd35b940ee5d321e5f49 "pdflatex"
+  "images/despair.jpg" 1718315408.43012 87494 69c8e0ac48789d6ef937f65d20295055 ""
+  "images/help.jpeg" 1718315408.43042 54490 02d8ef80097479b1cc465d046b7affae ""
+  "images/home_antiga.png" 1718315408.43563 1258239 148b0e70dafa3b810bccc70907af4ec8 ""
+  "images/home_principal.png" 1718315408.43633 154710 4cb7a37928b70a59613756f2d3a32688 ""
+  "images/tempo_real_antiga.png" 1718315408.43893 55961 9f62da51e70ca67a952081b915f045eb ""
+  "images/tempo_real_novo.png" 1718315408.44016 104927 0fc8277acd570fcc1153511735dc9ce2 ""
+  "images/title-block.png" 1718315408.44069 119855 743121586d828e9e42187f3ada319811 ""
+  "images/user-card.png" 1718315408.44135 163890 fffc2a4532d32f2248e065fc46b0720d ""
+  "relatorio.aux" 1718317150.69942 6355 1e1e500db076cbd30b9934d61099d7d7 "pdflatex"
   "relatorio.bbl" 0 -1 0 "bibtex relatorio"
-  "relatorio.out" 1718154107.6519 3662 faa72619f0d4e4bfb8ab3267ce271b98 "pdflatex"
-  "relatorio.tex" 1718154060.08792 33887 1591d045d7787334c5ef2d6fb05deaa0 ""
+  "relatorio.out" 1718317150.70039 4198 33114d89c5aff7d7e1c591e4474237e1 "pdflatex"
+  "relatorio.tex" 1718317147.71281 42143 3775a48252d2c921fef5439e08d2c5b2 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"

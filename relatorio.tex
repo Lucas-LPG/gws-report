@@ -162,16 +162,18 @@ Este projeto foi desenvolvido utilizando o $framework$ $Flask$, e seguindo a arq
 \subsection{Hardware}
 Utilizamos uma ESP32 para gerenciar os equipamentos e enviar dados via Wi-Fi. Os componentes principais incluem um sensor de temperatura (DHT22) e um leitor de tags para detectar a passagem de pessoas. Dois servomotores controlam a abertura e fechamento de portas e janelas, agilizando o serviço e prevenindo a propagação de doenças. A comunicação entre o hardware e o software é realizada via protocolo MQTT, garantindo a transmissão eficiente de dados.
 
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.30\textwidth]{schizo.jpeg}
-  \end{center}
-\end{figure}
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=0.30\textwidth]{schizo.jpeg}
+%   \end{center}
+% \end{figure}
 
 \subsection{Banco de Dados}
-Para o armazenamento dos dados, optamos pelo $MySQL$, um sistema de gerenciamento de banco de dados relacional ($RDBMS$) utilizado devido à sua eficiência e confiabilidade. O banco de dados foi projetado para suportar as operações necessárias da aplicação. A conexão com o banco de dados é feita através da biblioteca $PyMySQL$ e as interações através da biblioteca $SQLAlchemy$.
+Para o armazenamento dos dados, optamos pelo MySQL, um sistema de gerenciamento de banco de dados relacional (RDBMS) conhecido por sua eficiência e confiabilidade. O banco de dados foi projetado para suportar todas as operações necessárias da aplicação. A conexão com o banco de dados é estabelecida através da biblioteca PyMySQL e as interações são gerenciadas pela biblioteca SQLAlchemy.
 
-$EXPLICAR A INTERAÇAO, FUNCS E OS CARAIO A 4$
+Ao iniciar a aplicação, o banco de dados é automaticamente reiniciado, mantendo apenas os valores definidos na própria aplicação. Esses valores iniciais são especificados no arquivo \emph{initial\_insert.py}. Não é necessário configurar a conexão ou criar um usuário específico para o MySQL manualmente; basta rodar o MySQL na máquina local e a aplicação se encarregará do restante.
+
+
 
 \subsection{Front-End}
 O $front-end$ da aplicação foi desenvolvido utilizando $HTML$ e $Jinja2$ para os $templates$, permitindo a renderização dinâmica das páginas web. Além disso, utilizamos $CSS$ para estilização e $JavaScript$ para adicionar interatividade e efeitos visuais. Essa combinação de tecnologias $front-end$ garantiu uma interface de usuário responsiva e intuitiva.
@@ -373,34 +375,34 @@ A estrutura do diretório \emph{views}, com seus arquivos e subdiretórios é da
 
 \begin{lstlisting}[caption=Estrutura do Diretório]
   .
-  ├── actuators
-  │   ├── actuators.html
-  │   ├── register_actuator.html
-  │   └── update_actuator.html
-  ├── devices
-  │   ├── devices.html
-  │   ├── edit_device.html
-  │   └── register_device.html
-  ├── historic
-  │   ├── data-historic.html
-  │   └── data_history.html
-  ├── home.html
-  ├── kits
-  │   ├── edit_kits.html
-  │   ├── kits.html
-  │   └── register_kit.html
-  ├── landing.html
-  ├── layouts
-  │   └── layout.html
-  ├── login.html
-  ├── real_time.html
-  ├── sensors
-  │   ├── register_sensor.html
-  │   └── sensors.html
-  └── users
-      ├── edit_user.html
-      ├── register_user.html
-      └── users.html
+    /actuators
+        /actuators.html
+        /register_actuator.html
+        /update_actuator.html
+    /devices
+        /devices.html
+        /edit_device.html
+        /register_device.html
+    /historic
+        /data-historic.html
+        /data_history.html
+    /kits
+        /edit_kits.html
+        /kits.html
+        /register_kit.html
+    /layouts
+        /layout.html
+    /sensors
+        /register_sensor.html
+        /sensors.html
+    /users
+        /edit_user.html
+        /register_user.html
+        /users.html
+    home.html
+    landing.html
+    login.html
+    real_time.html
 \end{lstlisting}
 
       \paragraph{Métodos e Técnologias}
@@ -416,7 +418,7 @@ A estrutura do diretório \emph{views}, com seus arquivos e subdiretórios é da
 
       \begin{figure}[h]
         \begin{center}
-          \includegraphics[width=0.30\textwidth]{user-card.png}
+          \includegraphics[width=0.40\textwidth]{user-card.png}
         \end{center}
       \end{figure}
 
@@ -444,9 +446,6 @@ Utiliza o cliente MQTT para enviar e receber mensagens do tópico cz/enviar e cz
 A função check\_connection() verifica periodicamente a conexão com o servidor MQTT, reconectando-se automaticamente em caso de interrupções.
 \subsubsection{static}
 \begin{figure}[h]
-
-
-
   \begin{center}
     \includegraphics[width=0.30\textwidth]{despair.jpg}
   \end{center}
