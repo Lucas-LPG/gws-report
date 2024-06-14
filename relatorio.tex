@@ -78,11 +78,11 @@
 % Title and author
 \title{Desenvolvimento da Aplicação Flask}
 \author{
-    \IEEEauthorblockN{Lucas Puhl Gasperin, }
+    \IEEEauthorblockN{Lucas Puhl Gasperin }
     \and
-    \IEEEauthorblockN{Renan Pamplona, }
+    \IEEEauthorblockN{Renan Pamplona }
     \and
-    \IEEEauthorblockN{Renan Czervinski, }
+    \IEEEauthorblockN{Renan Czervinski }
     \and
     \IEEEauthorblockN{Tiago Follador }
 }
@@ -162,7 +162,7 @@ Este projeto foi desenvolvido utilizando o $framework$ $Flask$, e seguindo a arq
 \subsection{Hardware}
 Utilizamos uma ESP32 para gerenciar os equipamentos e enviar dados via Wi-Fi. Os componentes principais incluem um sensor de temperatura (DHT22) e um leitor de tags para detectar a passagem de pessoas. Dois servomotores controlam a abertura e fechamento de portas e janelas, agilizando o serviço e prevenindo a propagação de doenças. A comunicação entre o hardware e o software é realizada via protocolo MQTT, garantindo a transmissão eficiente de dados.
 
-% \begin{figure}[h]
+% \begin{figure}[H]
 %   \begin{center}
 %     \includegraphics[width=0.30\textwidth]{schizo.jpeg}
 %   \end{center}
@@ -406,27 +406,199 @@ A estrutura do diretório \emph{views}, com seus arquivos e subdiretórios é da
 \end{lstlisting}
 
       \paragraph{Métodos e Técnologias}
-      Com a exclusão do template \emph{login.html}, todos os arquivos extendem o layout \emph{layout.htlm}. Este aceita como argumentos 2 blocos: \emph{title} e \emph{content}. O primeiro se refere a elementos únicos do elemento \emph{HTML} \emph{head} da página que extende o layout, incluindo título, imports, etc. Por exemplo:
+      Com a exclusão do template \emph{login.html}, todos os arquivos extendem o layout \emph{layout.html}. Este aceita como argumentos dois blocos: \emph{title} e \emph{content}. O bloco \emph{title} se refere aos elementos únicos do elemento \emph{HTML} \emph{head} da página que extende o layout, incluindo título, imports, metadados, etc. Já o bloco \emph{content} contém o conteúdo principal da página.
 
-      \begin{figure}[h]
-        \begin{center}
-          \includegraphics[width=0.30\textwidth]{title-block.png}
-        \end{center}
-      \end{figure}
+      Por exemplo, para criar um novo template que utiliza o layout padrão, o arquivo pode ser estruturado da seguinte maneira:
+      \begin{lstlisting}[language=html, caption=Snippet de home.html]
 
-      Enquanto o segundo se refere ao conteúdo da página, que estará localizado abaixo do \emph{header} incluso em \emph{layout.html}. Ademais, diversos layouts fazer o uso da linguagem \emph{Jinja2} para mostrar informações de forma dinâmica ao usuário. Por exemplo, o código a seguir cria um elemento \emph{user--card} para cada user passado ao template.
+  {% block title %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/home.css" />
+  <script src="../static/js/home.js" defer></script>
+  <title>Gasperin Web Services</title>
+  {% endblock %}
 
-      \begin{figure}[h]
-        \begin{center}
-          \includegraphics[width=0.40\textwidth]{user-card.png}
-        \end{center}
-      \end{figure}
+      \end{lstlisting}
+
+      % \begin{figure}[H]
+      %   \begin{center}
+      %     \includegraphics[width=0.30\textwidth]{title-block.png}
+      %   \end{center}
+      % \end{figure}
+
+      Enquanto o segundo se refere ao conteúdo da página, que estará localizado abaixo do \emph{header} incluso em \emph{layout.html}. Ademais, diversos layouts fazem o uso da linguagem \emph{Jinja2} para mostrar informações de forma dinâmica ao usuário. Por exemplo, o código a seguir cria um elemento \emph{user--card} para cada user passado ao template.
+
+      \begin{lstlisting}[language=html, caption=Snippet de users/users.html]
+
+  {% for user in users %}
+  <div class="user--card">
+    <div class="user-name">
+      <span>{{ user.name }}</span>
+    </div>
+    <div class="user-role">
+      <span>{{user.role}} </span>
+    </div>
+    <div class="user-actions">
+      <a class="user-edit" href="/edit_user?user_id={{ user.id }}">Editar</a>
+      <a class="user-delete" href="/delete_user?user_id={{ user.id }}"
+        >Deletar</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+
+\end{lstlisting}
+      % \begin{figure}[H]
+      %   \begin{center}
+      %     \includegraphics[width=0.40\textwidth]{user-card.png}
+      %   \end{center}
+      % \end{figure}
 
 
 
-\subsubsection{Controllers}
-Falar das porcarias dos controllers
+      \subsubsection{Controllers}
+      O diretório controllers é usado para armazenar as rotas e organizar o código, visando melhor legibilidade e manutenção. Ao separar funcionalidades específicas em arquivos dedicados, o código se torna mais modular e fácil de gerenciar.
+      \paragraph{$\_\_init\_\_$}
+      O arquivo $\_\_init\_\_.py$ é equivalente a $app\_controller.py$ configura o aplicativo Flask, integrando o MQTT para comunicação em tempo real, gerenciamento de login e rotas diversas para manipulação de kits, dispositivos e histórico de dados.
+      \begin{itemize}
+          \item $create\_app$: Este método inicializa a aplicação Flask com configurações específicas, como o gerenciamento de sessões e a integração com o MQTT para comunicação em tempo real. Ele também define o gerenciador de login e registra várias rotas essenciais para a manipulação de kits, dispositivos, histórico de dados e gerenciamento de usuários. Essa configuração centralizada garante que todas as funcionalidades do aplicativo estejam prontas para uso, facilitando a manutenção e a extensão do código.
+          
+          \item $index$: A rota $index()$ renderiza a página principal do aplicativo. Essa função serve como ponto de entrada para os usuários, onde eles podem acessar outras funcionalidades do sistema. É uma rota simples que redireciona os usuários para a interface principal da aplicação.
+         
+          \item $handle\_mqtt\_message$:O método $handle\_mqtt\_message()$ lida com mensagens recebidas via MQTT, um protocolo de comunicação leve. Quando uma mensagem MQTT é recebida, este método processa a mensagem, atualizando os valores dos sensores e atuadores conforme necessário. Isso permite que o sistema reaja em tempo real às mudanças e eventos detectados pelos dispositivos conectados.
+         
+          \item $kits$:A rota $kits()$ é protegida e renderiza uma página que exibe a lista de kits associados ao usuário logado. Esta função facilita a visualização e o gerenciamento dos kits, fornecendo uma interface onde os usuários podem acessar rapidamente informações detalhadas sobre cada kit.
+          
+          \item $edit\_kit$: O método $edit\_kit()$ permite a edição dos detalhes de um kit específico. Ao acessar esta rota, o usuário pode modificar as informações associadas ao kit selecionado. Isso é essencial para manter os dados dos kits atualizados e corretos.
+          
+          \item $data\_history$: A $rota data\_history()$ é protegida e permite que os usuários visualizem o histórico de dados dos sensores e atuadores. Esta função é crucial para monitorar o desempenho ao longo do tempo e identificar padrões ou anomalias nos dados coletados.
+      
+          \item $edit\_given\_kit$: O método $edit\_given\_kit()$ valida a existência do kit e do usuário antes de permitir a edição dos detalhes do kit específico. Isso assegura que apenas kits válidos e pertencentes ao usuário logado possam ser modificados, garantindo a integridade dos dados.
+      
+          \item $remove\_kit$: A rota $remove\_kit()$ é protegida e permite que o usuário remova um kit especificado. Ao acessar esta função, o usuário pode deletar permanentemente um kit e todas as suas informações associadas do sistema.
+      
+          \item $add\_kit$: A rota $add\_kit()$ permite a adição de um novo kit ao sistema, validando a existência do kit e do usuário. Isso assegura que apenas kits válidos sejam registrados, mantendo a consistência dos dados.
+      
+          \item $devices$: A função $devices()$ é protegida e renderiza uma página com a lista de sensores e atuadores associados ao usuário logado. Esta interface permite que os usuários visualizem rapidamente todos os dispositivos conectados e seus estados.
+      
+          \item $edit\_device$: O método $edit\_device()$ facilita a edição dos detalhes de sensores e atuadores. Ao acessar esta rota, o usuário pode modificar as informações específicas de cada dispositivo, garantindo que os dados estejam sempre atualizados.
+      
+          \item $edit\_given\_device$: A função $edit\_given\_device()$ valida a existência do dispositivo e do kit antes de permitir a edição. Isso garante que apenas dispositivos válidos, pertencentes a kits existentes, possam ser modificados.
+      
+          \item $delete\_device$: A rota $delete\_device()$ é protegida e permite que o usuário delete um dispositivo especificado. Esta função remove permanentemente o dispositivo do sistema, incluindo todas as suas informações associadas.
+      
+          \item $register\_device$: A função $register\_device()$ renderiza um formulário protegido para registrar novos dispositivos. Isso facilita a adição de novos sensores e atuadores ao sistema, garantindo que todas as informações necessárias sejam fornecidas pelo usuário.
+      
+          \item $add\_device$: A rota $add\_device()$ permite a adição de um novo dispositivo ao sistema, validando a existência do kit e do dispositivo. Isso assegura que apenas dispositivos válidos sejam registrados, mantendo a integridade dos dados.
+      
+          \item $publish\_message$: A função $publish\_message()$ permite a publicação de uma mensagem via MQTT. Isso facilita a comunicação em tempo real entre o sistema e os dispositivos conectados, permitindo o envio de comandos e atualizações instantâneas.
+      
+          \item $real\_time$: A rota $real\_time()$ renderiza a página de monitoramento em tempo real, exibindo informações como a temperatura e a contagem de pessoas. Esta interface permite que os usuários monitorem os dados em tempo real, facilitando a tomada de decisões imediatas.
+      
+          \item $handle\_connect$: O método $handle\_connect()$ lida com a conexão bem-sucedida ao broker MQTT, subscrevendo aos tópicos relevantes. Isso assegura que o sistema esteja pronto para receber e processar mensagens MQTT assim que a conexão for estabelecida.
+      
+          \item $handle\_disconnect$: A função $handle\_disconnect()$ lida com a desconexão do broker MQTT. Isso permite que o sistema reaja apropriadamente a uma perda de conexão, tentando reconectar ou notificando os usuários sobre o problema.
+      
+          \item $load\_user\_from\_request$: O método $load\_user\_from\_request()$ carrega o usuário a partir de uma requisição, tentando autenticar via chave API ou autenticação básica. Isso facilita a identificação e autenticação de usuários em diferentes contextos de requisição.
+      
+          \item $load\_user$: A função $load\_user()$ carrega o usuário a partir do ID do usuário. Isso permite que o sistema obtenha informações detalhadas sobre o usuário, facilitando a personalização e gerenciamento de sessões.
+      \end{itemize}
+      
+      \paragraph{$actuators$}
+      O arquivo $actuators.py$ gerencia todas as operações relacionadas aos atuadores no sistema. Ele permite o registro, listagem, atualização e remoção de atuadores, fornecendo formulários protegidos para que os usuários possam adicionar novos atuadores e visualizar ou modificar os existentes. Este módulo assegura que todas as informações dos atuadores estejam atualizadas e corretamente associadas aos usuários.
+      \begin{itemize}
+          \item $register\_actuators$: A função $register\_actuators()$ renderiza um formulário protegido para registrar novos atuadores. Isso permite que os usuários adicionem atuadores ao sistema de maneira estruturada e validada.
+      
+          \item $list\_actuators$:A rota $list\_actuators$ é protegida e lista todos os atuadores associados ao usuário logado. Esta função facilita a visualização e gerenciamento de todos os atuadores disponíveis.
+      
+          \item $add\_actuators$: A função $add\_actuators()$ permite a adição de um novo atuador ao sistema, processando os dados do formulário submetido pelo usuário. Isso garante que os novos atuadores sejam corretamente registrados e associados ao usuário.
+      
+          \item $update\_actuator$: A rota $update\_actuator()$ permite a atualização das informações de um atuador existente. Esta função facilita a manutenção e atualização dos dados dos atuadores, garantindo que estejam sempre corretos e atualizados.
+      
+          \item $update\_actuator$: A rota $update\_actuator()$ permite a atualização das informações de um atuador existente. Esta função facilita a manutenção e atualização dos dados dos atuadores, garantindo que estejam sempre corretos e atualizados.
+      
+          \item $del\_actuator$: A função $del\_actuator()$ permite que o usuário delete um atuador especificado. Isso remove permanentemente o atuador do sistema, incluindo todas as suas informações associadas.
+      \end{itemize}
+      
+      \paragraph{$sensors$}
+      O arquivo $sensors.py$ lida com as operações relacionadas aos sensores, incluindo o registro, listagem, atualização e remoção de sensores. Ele oferece formulários protegidos para adicionar novos sensores e interfaces para visualizar e gerenciar os sensores já registrados. Esse módulo garante a consistência e integridade dos dados dos sensores no sistema.
+      
+      \begin{itemize}
+          \item $register\_sensors$: A função $register\_sensors()$ renderiza um formulário protegido para registrar novos sensores. Isso facilita a adição de novos sensores ao sistema, garantindo que todas as informações necessárias sejam fornecidas pelo usuário.
+      
+          \item $list\_sensors$: A rota $list\_sensors()$ é protegida e lista todos os sensores associados ao usuário logado. Esta função facilita a visualização e gerenciamento de todos os sensores disponíveis.
+      
+          \item $add\_sensors$: A função add_sensors() permite a adição de um novo sensor ao sistema, processando os dados do formulário submetido pelo usuário. Isso garante que os novos sensores sejam corretamente registrados e associados ao usuário.
+      
+          \item $update\_sensor$: A rota $update\_sensor()$ permite a atualização das informações de um sensor existente. Esta função facilita a manutenção e atualização dos dados dos sensores, garantindo que estejam sempre corretos e atualizados.
+      
+          \item $remove\_sensor$: A função $remove\_sensor()$ renderiza a página para remover sensores. Isso facilita a exclusão de sensores específicos do sistema, fornecendo uma interface para seleção e confirmação da remoção.
+      
+          \item $del\_sensor$:A função $del\_sensor()$ permite que o usuário delete um sensor especificado. Isso remove permanentemente o sensor do sistema, incluindo todas as suas informações associadas.
+          
+      \end{itemize}
+      
+      \paragraph{$login$}
+      O arquivo $login.py$ é responsável pelo gerenciamento de usuários, incluindo autenticação de login, registro de novos usuários e listagem dos usuários existentes. Ele processa as credenciais submetidas para autenticação, garante acesso seguro às áreas protegidas do sistema e permite que administradores adicionem ou removam usuários conforme necessário.
+      \begin{itemize}
+          \item $login\_func$: A função $login\_func()$ processa as credenciais submetidas pelo usuário e autentica o login. Isso garante que apenas usuários válidos possam acessar o sistema, protegendo as informações e funcionalidades.
+      
+          \item $home$: A rota $home()$ é protegida e renderiza a página inicial após o login, exibindo dados relevantes como kits e usuários associados. Esta função fornece uma visão geral rápida e acessível das informações principais do sistema.
+      
+          \item $register\_user$: A função $register\_user()$ renderiza um formulário protegido para registrar novos usuários. Isso facilita a adição de novos usuários ao sistema, garantindo que todas as informações necessárias sejam fornecidas.
+      
+          \item $add\_users$: A função $add\_users()$ permite a adição de um novo usuário ao sistema, processando os dados do formulário submetido. Isso assegura que novos usuários sejam corretamente registrados e autenticados.
+      
+          \item $list\_users$: A rota $list\_users()$ é protegida e lista todos os usuários registrados no sistema. Esta função facilita a visualização e gerenciamento de todos os usuários disponíveis.
+      
+          \item $remove\_user$: A função $remove\_user()$ permite que o administrador delete um usuário especificado. Isso remove permanentemente
+      \end{itemize}
+      
 \subsubsection{db}
+
+O diretório db é fundamental para a configuração e gerenciamento do banco de dados. Utilizando arquivos como $\_\_init\_\_.py$, $clean\_db.py$, $events.py$ e $initial\_insert.py$, o sistema realiza desde a inicialização e limpeza do banco de dados até a criação de estruturas, como tabelas e gatilhos, para capturar eventos importantes, como inserções e exclusões. Além disso, são realizadas inserções iniciais para preencher o banco de dados com dados básicos. Essas operações garantem a integridade e funcionalidade do sistema de banco de dados ao longo do tempo.
+
+\paragraph{\_\_init\_\_}
+Este arquivo desempenha um papel crucial na inicialização do aplicativo Flask e na configuração do contexto do aplicativo. Aqui, são importados modelos de dados (models) e módulos que lidam com operações de banco de dados, como limpeza, criação de gatilhos e inserção inicial de dados.
+
+\paragraph{clean\_db}
+O arquivo $clean\_db.py$ é responsável por limpar o banco de dados antes de sua inicialização. Ele utiliza SQL raw para executar operações como:
+\begin{itemize}
+    \item $drop\_database\_stmt$: Remove o banco de dados existente, se houver.
+    \item $create\_database\_stmt$: Cria um novo banco de dados com o nome especificado, no caso $puhl\_gasperin\_health$.
+    \item $use\_database\_stmt$: Manda utilizar o banco de dados com o nome especificado
+    \item $drop\_user\_stmt$: Remove um usuário de banco de dados, se já existir.
+    \item $create\_user\_stmt$: Cria um novo usuário com permissões específicas para interagir com o banco de dados.
+    \item $grant\_stmt$: Concede todas as permissões para o usuário criado, garantindo acesso completo ao banco de dados.
+\end{itemize}
+
+\paragraph{connection}
+No arquivo $connection.py$, a conexão com o banco de dados é configurada usando SQLAlchemy, uma biblioteca de mapeamento objeto-relacional (ORM) para Python. As etapas incluem:
+\begin{itemize}
+    \item Configuração dos parâmetros de conexão como usuário, senha, servidor, porta e nome do banco de dados $puhl\_gasperin\_health$.
+    \item Verificação da existência do banco de dados. Se não existir, ele é criado usando $create\_database$ da SQLAlchemy Utils.
+    \item Essa configuração garante que o ambiente de banco de dados esteja pronto para ser utilizado pelo aplicativo.
+\end{itemize}
+
+\paragraph{events}
+O arquivo $events.py$ gerencia a criação de gatilhos no banco de dados. Gatilhos são procedimentos automáticos que são acionados por eventos específicos no banco de dados, como inserções, atualizações e exclusões. Este arquivo contém:
+\begin{itemize}
+    \item $create\_historic\_trigger$: Este método cria um gatilho que é acionado após a inserção de um novo registro na tabela devices. Quando um dispositivo é adicionado, o gatilho insere automaticamente um registro correspondente na tabela historic, incluindo o valor do dispositivo, a data e hora da inserção ($NOW()$) e o ID do dispositivo. Isso permite rastrear eventos históricos de novos dispositivos registrados no sistema.
+    \item $update\_historic\_trigger$: Este método define um gatilho que é acionado após a atualização de um registro na tabela devices. Sempre que um dispositivo é atualizado, o gatilho insere um novo registro na tabela historic, contendo o novo valor do dispositivo, a data e hora da atualização ($NOW()$) e o ID do dispositivo. Isso ajuda a manter um histórico detalhado das alterações feitas nos dispositivos.
+    \item $handle\_device\_deletion$: Este método cria um gatilho que é executado antes da exclusão de um registro na tabela devices. O gatilho garante que todas as referências ao dispositivo excluído sejam removidas das tabelas sensors, actuators e historic. Isso impede inconsistências no banco de dados, garantindo que não restem dados órfãos relacionados ao dispositivo excluído.
+    \item $handle\_user\_deletion$: Este método define um gatilho que é acionado antes da exclusão de um registro na tabela users. O gatilho remove todos os kits associados ao usuário que está sendo excluído, garantindo que não fiquem kits sem referência a um usuário válido no sistema.
+    \item $handle\_kit\_deletion$: Este método cria um gatilho que é executado antes da exclusão de um registro na tabela kits. O gatilho remove todos os dispositivos associados ao kit que está sendo excluído, assegurando que os dispositivos não permaneçam no banco de dados sem estar associados a um kit válido.
+\end{itemize}
+
+\paragraph{initial\_insert}
+O arquivo $initial\_insert.py$ é responsável pela inserção inicial de dados no banco de dados. Isso inclui:
+\begin{itemize}
+    \item $\_populate\_users$: Insere registros de usuários (User) no banco de dados. Cada usuário tem um nome, senha e papel no sistema.
+    \item $\_populate\_kits$: Insere registros de kits (Kit) no banco de dados. Cada kit está associado a um usuário específico.
+    \item $\_populate\_devices$: Insere registros de dispositivos (Device) no banco de dados. Cada dispositivo tem um nome, estado inicial e é associado a um kit.
+    \item $\_populate\_actuators$ e $\_populate\_sensors$: Insere registros de atuadores e sensores no banco de dados, respectivamente. Cada um está associado a um dispositivo específico.
+\end{itemize}
 \subsubsection{ESP32}
 O ESP32, integrado neste projeto, desempenha um papel crucial na coleta de dados ambientais e no controle de dispositivos periféricos. Este microcontrolador Wi-Fi e Bluetooth é central para a funcionalidade do sistema, permitindo a comunicação com a Internet e interação com sensores e atuadores.
 
@@ -444,12 +616,22 @@ Utiliza o cliente MQTT para enviar e receber mensagens do tópico cz/enviar e cz
 
 \paragraph{Monitoramento de Conexão}
 A função check\_connection() verifica periodicamente a conexão com o servidor MQTT, reconectando-se automaticamente em caso de interrupções.
+\vspace{10pt}
 \subsubsection{static}
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.30\textwidth]{despair.jpg}
-  \end{center}
-\end{figure}
+O diretório static é crucial para o funcionamento do website, pois nele estão armazenados todos os elementos estáticos essenciais, como imagens, arquivos CSS e JavaScript. Esses recursos desempenham um papel fundamental na estética e na usabilidade da aplicação.
+
+As imagens contidas no diretório static incluem elementos visuais como logotipos, ícones e banners, que são fundamentais para a identidade visual do site e para melhorar a experiência do usuário ao tornar a navegação mais atraente e informativa.
+
+Os arquivos CSS são responsáveis por estilizar as páginas web, definindo aspectos como cores, fontes e layout. Isso não apenas proporciona uma interface visualmente agradável, mas também garante consistência no design do site, independentemente do dispositivo usado pelo usuário.
+
+Os scripts JavaScript presentes no diretório static adicionam interatividade às páginas, permitindo funcionalidades dinâmicas como menus deslizantes, validação de formulários e animações. Esses elementos não só melhoram a usabilidade, tornando o site mais intuitivo e responsivo, mas também proporcionam uma experiência de usuário mais envolvente.
+
+Ao concentrar esses recursos em um único diretório, o static facilita o desenvolvimento e a manutenção do website, garantindo que atualizações e modificações nos elementos visuais e funcionais sejam gerenciadas de maneira eficiente.
+% \begin{figure}[H]
+%   \begin{center}
+%     \includegraphics[width=0.30\textwidth]{despair.jpg}
+%   \end{center}
+% \end{figure}
 
 
 \section{Resultados}
@@ -465,79 +647,105 @@ As etapas de evolução pelas quais o projeto passou até chegar ao seu estado a
 \end{itemize}
 
 \subsection{Inicialização dos recursos de hardware}
-Inciando o projeto não utilizamos nenhum recurso de software. No lugar, começamos apenas implementando o hardware.
+Inciando o projeto não utilizamos nenhum recurso de software. No lugar, começamos apenas implementando o hardware descrito préviamente. Utilizando tanto peças de hardware físicas quanto a ferramenta Wokwi.
 
 \subsection{Web}
 
 Ao longo do desenvolvimento do projeto, realizamos várias melhorias para aprimorar a interação do usuário e tornar a aplicação mais dinâmica e intuitiva.
-
+\vspace{10pt}
 \subsubsection{Tela de Início}
 
-Antes: A tela de início era simples, com poucas opções de navegação e informações básicas.
-\begin{figure}[h]
+A tela de início original apresentava uma interface simples, oferecendo poucas opções de navegação e informações básicas. Com o objetivo de proporcionar uma experiência mais envolvente e agradável para o usuário, decidimos implementar uma reformulação completa do design, adotando uma abordagem moderna e minimalista.
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{home_antiga.png}
+    \caption{\href{https://github.com/Lucas-LPG/gws/blob/develop/report/images/home_antiga.png}{Tela de início antiga}}
   \end{center}
 \end{figure}
 
-Depois: Incrementamos a tela de início com mais informações relevantes, uma interface mais intuitiva, clara e facil de se encontrar.
-\begin{figure}[h]
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{home_principal.png}
+    \caption{\href{https://github.com/Lucas-LPG/gws/blob/develop/report/images/home_principal.png}{Tela de início nova}}
   \end{center}
 \end{figure}
-\subsubsection{Opções de Administração}
 
-Antes: As opções de administração eram limitadas e pouco intuitivas, com menus básicos que não ofereciam muitas funcionalidades avançadas. A falta de recursos interativos e a interface simplificada dificultavam a gestão eficiente do sistema. Isso impactava diretamente na capacidade de análise detalhada dos dados e na tomada de decisões informadas. Além disso, a ausência de gráficos detalhados e relatórios precisos limitava a compreensão completa do desempenho do sistema. Com a reformulação, procuramos criar um ambiente administrativo mais intuitivo e eficaz. Introduzimos um painel de controle completo com gráficos interativos que proporcionam uma visualização clara e em tempo real dos dados, facilitando a análise e o monitoramento contínuo. Essas mudanças visam não apenas melhorar a usabilidade, mas também aumentar a eficiência operacional e a capacidade de resposta às demandas dos usuários
-\begin{figure}[h]
+\vspace{50pt}
+\subsubsection{Página Administrativa}
+
+A página reservada aos administradores da empresa era limitada e pouco intuitiva, com menus básicos pouco responsíveis que não ofereciam muitas funcionalidades avançadas. A falta de recursos interativos e a interface simplificada dificultavam a gestão eficiente do sistema. Isso impactava diretamente na capacidade de análise detalhada dos dados e na tomada de decisões informadas. Além disso, a ausência de gráficos detalhados e relatórios precisos limitava a compreensão completa do desempenho do sistema. Com a reformulação, procuramos criar um ambiente administrativo mais intuitivo e eficaz. Introduzimos um painel de controle completo com gráficos interativos que proporcionam uma visualização clara e em tempo real dos dados, facilitando a análise e o monitoramento contínuo. Essas mudanças visam não apenas melhorar a usabilidade, mas também aumentar a eficiência operacional e a capacidade de resposta às demandas dos usuários.
+\vspace{10pt}
+
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{tempo_real_antiga.png}
+    \caption{\href{https://github.com/Lucas-LPG/gws/blob/develop/report/images/tempo_real_antiga.png}{Tela Console Antiga}}
   \end{center}
 \end{figure}
 
 
-
-
-Depois: Reformulamos as opções de administração, criando um painel mais intuitivo e fácil de usar. Adicionamos novos recursos e opções para facilitar a gestão do sistema, incluindo gráficos interativos e relatórios detalhados.
-\begin{figure}[h]
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{tempo_real_novo.png}
+    \caption{\href{https://github.com/Lucas-LPG/gws/blob/develop/report/images/tempo_real_novo.png}{Tela Console Nova}}
   \end{center}
 \end{figure}
+\vspace{10pt}
 
 
 \subsubsection{Nome do projeto}
 
-Antes: O projeto era chamado de Medical Care Puhl Gasperin, um nome que poderia sugerir uma associação direta com serviços médicos e hospitalares.
+A empresa era inicialmente chamado de Medical Care Puhl Gasperin, um nome que poderia sugerir uma associação direta com serviços médicos e hospitalares. Todavia, apos considerarmos, alteramos o nome para Gasperin Web Services para refletir mais claramente nosso objetivo de fornecer uma solução tecnológica para hospitais e outros tipos de negócios, sem implicar envolvimento direto com a prática médica. Esse novo nome comunica melhor nosso foco em serviços tecnológicos e gerenciamento de ambientes.
 
-Depois: Alteramos o nome para Gasperin Web Services para refletir mais claramente nosso objetivo de fornecer uma solução tecnológica para hospitais, sem implicar envolvimento direto com a prática médica. Esse novo nome comunica melhor nosso foco em serviços tecnológicos e gerenciamento de ambientes hospitalares.
-
-
-\subsubsection{Modos de Exibição}
-
-Implementamos a opção de modos de exibição dark e light, permitindo que o usuário escolha a interface que melhor se adapta às suas preferências. Essa funcionalidade pode ser facilmente ajustada a qualquer momento, proporcionando maior flexibilidade e conforto visual ao usuário.
-\subsubsection{Vai tomar no cu}
-\subsubsection{Preciso de umas imagens}
-IMAGEM IMAGEM IMGAGEM
-
-\begin{figure}[h]
-
+\begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.30\textwidth]{help.jpeg}
+    \includegraphics[width=0.5\textwidth]{tempo_real_novo.png}
+    \caption{\href{https://github.com/Lucas-LPG/gws/blob/develop/report/images/tempo_real_novo.png}{Tela Console Dark}}
   \end{center}
 \end{figure}
+\vspace{10pt}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{tempo_real_lighmode_nova.png}
+    \caption{\href{https://github.com/Lucas-LPG/gws/blob/develop/report/images/tempo_real_lighmode_nova.png}{Tela Console Light}}
+  \end{center}
+\end{figure}
+\vspace{10pt}
+\subsubsection{Modos de Exibição}
+
+Decidimos criar algo simples que deixasse a interação com o website mais divertida e intuitiva. Para tal, implementamos a opção de modos de exibição dark e light, permitindo que o usuário escolha a interface que melhor se adapta às suas preferências. Essa funcionalidade pode ser facilmente ajustada a qualquer momento, proporcionando maior flexibilidade e conforto visual ao usuário.
+
+
+
+\vspace{10pt}
+\subsection{Resultados Finais}
+
+Evidencia-se, portanto, que o website como um todo passou por uma transformação significativa e aprimorada. As mudanças não foram feitas apenas para atender aos critérios estabelecidos, mas também com o objetivo de criar uma aplicação mais estética, minimalista e funcional, proporcionando uma experiência de uso superior.
 
 \subsection{Banco de dados}
 Durante o desenvolvimento do projeto, a implementação do sistema de login passou por uma significativa evolução. Inicialmente, a verificação de usuários era realizada sem o uso de banco de dados, utilizando apenas dicionários em Python para armazenar informações básicas de login.
 
-Antes: No início, o sistema de login utilizava dicionários em Python para verificar as credenciais dos usuários. Este método era simples e rápido de implementar, mas apresentava limitações em termos de escalabilidade e segurança.
+No início, o sistema de login utilizava dicionários em Python para verificar as credenciais dos usuários. Este método era simples e rápido de implementar, mas apresentava limitações em termos de escalabilidade e segurança.
 As informações dos usuários, como nomes de usuário e senhas, eram armazenadas diretamente no código, o que não é uma prática recomendada para sistemas em produção.
 
-Depois: Com a evolução do projeto, migramos o sistema de login para utilizar um banco de dados MySQL. Esta mudança permitiu um armazenamento mais seguro e escalável das informações dos usuários.
+Com a evolução do projeto, migramos o sistema de login para utilizar um banco de dados MySQL, acompanhada da biblioteca flask\_login. Esta mudança permitiu um armazenamento mais seguro e escalável das informações dos usuários.
 Criamos tabelas específicas para armazenar os dados dos usuários e suas respectivas roles. Os usuários são agora categorizados em diferentes roles, como admin, user e operario. Isso permite um controle de acesso mais refinado e seguro, onde cada role tem permissões e funcionalidades específicas dentro da aplicação.
 A integração com o banco de dados também nos possibilitou implementar práticas de segurança mais robustas, como a utilização de tokens para sessões de login.
 A evolução do Flask Login reflete nosso compromisso em melhorar a segurança, escalabilidade e usabilidade da aplicação. Ao migrar de um sistema baseado em dicionários para um banco de dados estruturado, conseguimos oferecer um sistema de autenticação mais robusto e confiável para nossos usuários.
+Ademais, alguns templates presentes no diretório *Views* utilizam do Flask Login para verificar o que o usuário atual pode ou não acessar dentro da página em específico. Por exemplo, o *snippet* abaixo altera o link de referência de acordo com o role do usuário atual.
+\vspace{10pt}
+\begin{lstlisting}[language=html, caption=Snippet de home.html]
 
+  <a
+  class="card--link"
+  onmouseover="activateCursor()"
+  onmouseleave="deactivateCursor()"
+  href="{% if current_user.role != 'operador' %} /real_time {% else %} /data_history {% endif %}"
+  >mais informacoes <i class="fa-solid fa-arrow-right"></i
+></a>
+
+\end{lstlisting}
 
 \section{Discussão}
 \label{sec:discussion}
@@ -546,7 +754,7 @@ A evolução do Flask Login reflete nosso compromisso em melhorar a segurança, 
 
   Os resultados preliminares indicam uma melhoria na fluidez do atendimento e uma redução no tempo de espera dos pacientes. A capacidade de monitoramento em tempo real permite uma resposta rápida a situações de alta demanda, evitando aglomerações e garantindo um atendimento mais organizado e seguro, especialmente em tempos de pandemia. No entanto, algumas falhas foram observadas durante o processo de implementação. Problemas de conectividade foram identificados como pontos críticos que necessitam de soluções para garantir a confiabilidade do sistema. Como solução, deve-se investir em equipamentos duradouros e de qualidade, a fim de providenciar um funcionamento constante e duradouro.
 
-  As implicações futuras dessa tecnologia são promissoras. A possibilidade de criar um aplicativo móvel que não apenas mostre os dados de ocupação em tempo real, mas também direcione os pacientes para o posto de saúde mais adequado conforme a demanda atual, pode revolucionar o acesso aos serviços de saúde. Essa funcionalidade reduziria ainda mais os tempos de espera e distribuiria melhor os pacientes entre as diversas unidades, evitando sobrecargas em determinados locais e subutilização em outros. Ademais, a análise dos dados coletados pode fornecer $insights$ valiosos sobre padrões de utilização dos serviços de saúde, permitindo uma melhor gestão e planejamento. 
+  As implicações futuras dessa tecnologia são promissoras. A possibilidade de criar um aplicativo móvel que não apenas mostre os dados de ocupação em tempo real, mas também direcione os pacientes para o posto de saúde mais adequado conforme a demanda atual, pode revolucionar o acesso aos serviços de saúde. Essa funcionalidade reduziria ainda mais os tempos de espera e distribuiria melhor os pacientes entre as diversas unidades, evitando sobrecargas em determinados locais e subutilização em outros. Ademais, a análise dos dados coletados pode fornecer $insights$ valiosos sobre padrões de utilização dos serviços de saúde, permitindo uma melhor gestão e planejamento.
 
   Entretanto, a implementação desse sistema requer a consideração de diversos fatores. Visto que existem diversos sistemas já em produção dentro dos postos de saúde públicos, é fundamental assegurar a compatibilidade do novo sistema com estes já existentes, promovendo uma integração eficiente e sem falhas. Investimentos em infraestrutura tecnológica e treinamento de pessoal são igualmente essenciais para o sucesso do projeto a longo prazo.
 
@@ -564,14 +772,6 @@ A evolução do Flask Login reflete nosso compromisso em melhorar a segurança, 
 
   A incorporação dessas tecnologias emergentes no dia a dia dos serviços de saúde pode levar a uma transformação significativa, onde a gestão de fluxo e a alocação de recursos se tornem mais eficazes e responsivas. Para alcançar esse futuro, é essencial um compromisso contínuo com a inovação, o investimento em tecnologia e a formação de profissionais capacitados para lidar com esses novos sistemas. Dessa forma, poderemos garantir que os avanços tecnológicos se traduzam em benefícios reais e duradouros para a sociedade.
 
-
-
-
-
-
-\section{Referencias}
-\label{sec:references}
-% List all references used in the preparation of the document, including books, articles, and online resources.
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 

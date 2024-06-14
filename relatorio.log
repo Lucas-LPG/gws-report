@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.4)  13 JUN 2024 19:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.4)  13 JUN 2024 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -595,7 +595,6 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring ON on input line 91.
- (./relatorio.out) (./relatorio.out)
 \@outlinefile=\write3
 \openout3 = `relatorio.out'.
 
@@ -869,105 +868,553 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
 
-[6]
-<images/title-block.png, id=203, 1545.775pt x 560.0925pt>
-File: images/title-block.png Graphic file (type png)
-<use images/title-block.png>
-Package pdftex.def Info: images/title-block.png  used on input line 413.
-(pdftex.def)             Requested size: 146.73235pt x 53.1666pt.
+[6] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+Underfull \hbox (badness 7851) in paragraph at lines 463--465
+\T1/ptm/m/n/12 O ar-quivo $[][]\OML/cmm/m/it/12 init[][]:py$ \T1/ptm/m/n/12 é equiv-a-lente a
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/user-card.png, id=204, 1666.225pt x 903.375pt>
-File: images/user-card.png Graphic file (type png)
-<use images/user-card.png>
-Package pdftex.def Info: images/user-card.png  used on input line 421.
-(pdftex.def)             Requested size: 195.63815pt x 106.05698pt.
-
-LaTeX Warning: Command \~ invalid in math mode on input line 439.
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
+\OML/cmm/m/it/12 app[]controller:py$ \T1/ptm/m/n/12 con-figura o aplica-tivo
+ []
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 439.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.91998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+[]$\OML/cmm/m/it/12 handle[]mqtt[]message$\T1/ptm/m/n/12 :O método
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+\OML/cmm/m/it/12 handle[]mqtt[]message\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 lida com
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 469--470
+\T1/ptm/m/n/12 men-sagens re-ce-bidas via MQTT, um
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+\T1/ptm/m/n/12 uma men-sagem MQTT é re-ce-bida,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+\T1/ptm/m/n/12 este método pro-cessa a men-sagem,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+\T1/ptm/m/n/12 at-u-adores con-forme necessário. Isso
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+[]$\OML/cmm/m/it/12 edit[]given[]kit$\T1/ptm/m/n/12 : O método
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+\OML/cmm/m/it/12 edit[]given[]kit\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 val-ida a ex-istên-cia
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 481--482
+[]$\OML/cmm/m/it/12 add[]kit$\T1/ptm/m/n/12 : A rota $\OML/cmm/m/it/12 add[]kit\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 per-mite a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
+[]$\OML/cmm/m/it/12 edit[]given[]device$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
+\T1/ptm/m/n/12 a edição. Isso garante que ape-nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+[]$\OML/cmm/m/it/12 register[]device$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+\OML/cmm/m/it/12 register[]device\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 ren-der-iza um
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+\T1/ptm/m/n/12 for-mulário pro-te-gido para reg-is-trar
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 491--492
+\T1/ptm/m/n/12 garantindo que to-das as in-for-mações
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+\T1/ptm/m/n/12 necessárias se-jam forneci-das pelo
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.91998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+[]$\OML/cmm/m/it/12 publish[]message$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 3219) in paragraph at lines 495--496
+\T1/ptm/m/n/12 sis-tema e os dis-pos-i-tivos conec-ta-dos,
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 495--496
+\T1/ptm/m/n/12 per-mitindo o en-vio de co-man-dos e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+[]$\OML/cmm/m/it/12 handle[]connect$\T1/ptm/m/n/12 : O método
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+\T1/ptm/m/n/12 bem-sucedida ao bro-ker MQTT,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+[]$\OML/cmm/m/it/12 handle[]disconnect$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\OML/cmm/m/it/12 handle[]disconnect\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 lida com
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\T1/ptm/m/n/12 a de-sconexão do bro-ker MQTT.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\T1/ptm/m/n/12 Isso per-mite que o sis-tema reaja
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 501--502
+\T1/ptm/m/n/12 ten-tando re-conec-tar ou no-ti-f-i-cando os
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+[]$\OML/cmm/m/it/12 load[]user[]from[]request$\T1/ptm/m/n/12 : O método
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+\OML/cmm/m/it/12 load[]user[]from[]request\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 car-rega
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 503--504
+\T1/ptm/m/n/12 ten-tando au-t-en-ticar via chave API ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+\T1/ptm/m/n/12 au-t-en-ti-cação básica. Isso fa-cilita a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+[]$\OML/cmm/m/it/12 register[]actuators$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+\OML/cmm/m/it/12 register[]actuators\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 ren-der-iza um
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+\T1/ptm/m/n/12 adi-cionem at-u-adores ao sis-tema de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
+[]$\OML/cmm/m/it/12 add[]actuators$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 515--516
+\T1/ptm/m/n/12 novo at-u-ador ao sis-tema, pro-ces-sando
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 515--516
+\T1/ptm/m/n/12 usuário. Isso garante que os novos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
+[]$\OML/cmm/m/it/12 update[]actuator$\T1/ptm/m/n/12 : A rota
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 517--518
+\T1/ptm/m/n/12 Esta função fa-cilita a manutenção e
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 517--518
+\T1/ptm/m/n/12 at-u-al-iza-ção dos da-dos dos at-u-adores,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
+[]$\OML/cmm/m/it/12 update[]actuator$\T1/ptm/m/n/12 : A rota
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 519--520
+\T1/ptm/m/n/12 Esta função fa-cilita a manutenção e
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 519--520
+\T1/ptm/m/n/12 at-u-al-iza-ção dos da-dos dos at-u-adores,
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.91998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+[]$\OML/cmm/m/it/12 register[]sensors$\T1/ptm/m/n/12 : A função
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+\OML/cmm/m/it/12 register[]sensors\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 ren-der-iza um
+ []
+
+
+Underfull \hbox (badness 6173) in paragraph at lines 528--529
+\T1/ptm/m/n/12 sen-sores ao sis-tema, garantindo que
+ []
+
+/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex:532: Missing $ inserted.
+<inserted text> 
+                $
+l.532 ...    \item $add\_sensors$: A funÃ§Ã£o add_
+                                                  sensors() permite a adiÃ§Ã...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 532.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 532.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 532.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 532.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 532.
+
+/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex:533: Missing $ inserted.
+<inserted text> 
+                $
+l.533 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex:533: Missing } inserted.
+<inserted text> 
+                }
+l.533 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no ç in font cmr12!
+Missing character: There is no ã in font cmr12!
+Missing character: There is no á in font cmr12!
+Missing character: There is no á in font cmr12!
+Missing character: There is no á in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+[]$\OML/cmm/m/it/12 add[]sensors$\T1/ptm/m/n/12 : A função
+ []
+
+
+Overfull \hbox (799.15874pt too wide) in paragraph at lines 532--533
+\T1/ptm/m/n/12 add$[]\OML/cmm/m/it/12 ensors\OT1/cmr/m/n/12 ()\OML/cmm/m/it/12 permiteaadiodeumnovosensoraosistema; processandoosdadosdoformulriosubmetidopelousurio:Issogarantequeosnovossensoressejamcorretamenteregistradoseassociadosaousurio:[]$ 
+ []
+
+/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex:533: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.533 
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+[]$\OML/cmm/m/it/12 update[]sensor$\T1/ptm/m/n/12 : A rota $\OML/cmm/m/it/12 update[]sensor\OT1/cmr/m/n/12 ()$
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 534--535
+\T1/ptm/m/n/12 per-mite a at-u-al-iza-ção das in-for-mações de
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 534--535
+\T1/ptm/m/n/12 manutenção e at-u-al-iza-ção dos da-dos dos
+ []
+
+
+Underfull \hbox (badness 5832) in paragraph at lines 534--535
+\T1/ptm/m/n/12 sen-sores, garantindo que es-te-jam sem-pre
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 538--539
+[]$\OML/cmm/m/it/12 del[]sensor$\T1/ptm/m/n/12 :A função $\OML/cmm/m/it/12 del[]sensor\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 per-mite
+ []
+
+
+Underfull \hbox (badness 3735) in paragraph at lines 545--546
+\T1/ptm/m/n/12 cessa as cre-den-ci-ais sub-meti-das pelo
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 547--548
+[]$\OML/cmm/m/it/12 home$\T1/ptm/m/n/12 : A rota $\OML/cmm/m/it/12 home\OT1/cmr/m/n/12 ()$ \T1/ptm/m/n/12 é pro-te-gida e
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 549--550
+\T1/ptm/m/n/12 adição de novos usuários ao sis-tema,
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 549--550
+\T1/ptm/m/n/12 garantindo que to-das as in-for-mações
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 551--552
+\T1/ptm/m/n/12 mulário sub-metido. Isso as-se-gura que
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 566--568
+\T1/ptm/m/n/12 O ar-quivo $\OML/cmm/m/it/12 clean[]db:py$ \T1/ptm/m/n/12 é re-spon-sável por
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.91998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+
+[10]
+Underfull \hbox (badness 2698) in paragraph at lines 569--570
+[]$\OML/cmm/m/it/12 create[]database[]stmt$\T1/ptm/m/n/12 : Cria um novo
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 570--571
+[]$\OML/cmm/m/it/12 use[]database[]stmt$\T1/ptm/m/n/12 : Manda uti-lizar o
+ []
+
+
+Underfull \hbox (badness 2884) in paragraph at lines 577--579
+\T1/ptm/m/n/12 o banco de da-dos é con-fig-u-rada us-ando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+[]\T1/ptm/m/n/12 Configuração dos parâmet-ros de
+ []
+
+
+Underfull \hbox (badness 6300) in paragraph at lines 579--580
+\T1/ptm/m/n/12 porta e nome do banco de da-dos
+ []
+
+
+Underfull \hbox (badness 6559) in paragraph at lines 587--588
+[]$\OML/cmm/m/it/12 create[]historic[]trigger$\T1/ptm/m/n/12 : Este método
+ []
+
+
+Underfull \hbox (badness 3657) in paragraph at lines 588--589
+[]$\OML/cmm/m/it/12 update[]historic[]trigger$\T1/ptm/m/n/12 : Este método
+ []
+
+
+Underfull \hbox (badness 7704) in paragraph at lines 589--590
+[]$\OML/cmm/m/it/12 handle[]device[]deletion$\T1/ptm/m/n/12 : Este método
+ []
+
+
+Underfull \hbox (badness 7256) in paragraph at lines 597--598
+[]$[]\OML/cmm/m/it/12 populate[]users$\T1/ptm/m/n/12 : In-sere reg-istros de
+ []
+
+
+Underfull \hbox (badness 1616) in paragraph at lines 599--600
+[]$[]\OML/cmm/m/it/12 populate[]devices$\T1/ptm/m/n/12 : In-sere reg-istros de
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.91998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
+[]$[]\OML/cmm/m/it/12 populate[]actuators$ \T1/ptm/m/n/12 e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
+[]\OML/cmm/m/it/12 populate[]sensors$\T1/ptm/m/n/12 : In-sere reg-istros
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 600--601
+\T1/ptm/m/n/12 da-dos, re-spec-ti-va-mente. Cada um está
+ []
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 611.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 611.
 
 Missing character: There is no õ in font cmr12!
 Missing character: There is no í in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
 []$\OML/cmm/m/it/12 BotesdeEntradaeSada$\T1/ptm/m/n/12 : Geren-ciam o
  []
 
 
+Underfull \hbox (badness 1735) in paragraph at lines 623--624
+[]\T1/ptm/m/n/12 As im-a-gens con-ti-das no di-retório static
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 627--628
+\T1/ptm/m/n/12 static adi-cionam in-ter-a-tivi-dade às pági-nas,
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.91998pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.91998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
 
-[7 <./images/title-block.png> <./images/user-card.png>]
-<images/despair.jpg, id=244, 772.8875pt x 772.8875pt>
-File: images/despair.jpg Graphic file (type jpg)
-<use images/despair.jpg>
-Package pdftex.def Info: images/despair.jpg  used on input line 450.
-(pdftex.def)             Requested size: 146.73235pt x 146.73221pt.
-
-Underfull \hbox (badness 2351) in paragraph at lines 467--467
+[12]
+Underfull \hbox (badness 2351) in paragraph at lines 649--649
 |[]\T1/ptm/b/n/14 Inicialização dos re-cur-sos de
  []
 
-<images/home_antiga.png, id=245, 1882.03125pt x 958.58125pt>
+<images/home_antiga.png, id=193, 1882.03125pt x 958.58125pt>
 File: images/home_antiga.png Graphic file (type png)
 <use images/home_antiga.png>
-Package pdftex.def Info: images/home_antiga.png  used on input line 479.
+Package pdftex.def Info: images/home_antiga.png  used on input line 661.
 (pdftex.def)             Requested size: 244.55144pt x 124.5468pt.
 
-Overfull \hbox (16.26064pt too wide) in paragraph at lines 479--480
+Overfull \hbox (16.26064pt too wide) in paragraph at lines 661--662
  [] 
  []
 
-<images/home_principal.png, id=247, 1877.0125pt x 953.5625pt>
+<images/home_principal.png, id=196, 1877.0125pt x 953.5625pt>
 File: images/home_principal.png Graphic file (type png)
 <use images/home_principal.png>
-Package pdftex.def Info: images/home_principal.png  used on input line 486.
+Package pdftex.def Info: images/home_principal.png  used on input line 668.
 (pdftex.def)             Requested size: 244.55144pt x 124.22937pt.
 
-Overfull \hbox (16.26064pt too wide) in paragraph at lines 486--487
+Overfull \hbox (16.26064pt too wide) in paragraph at lines 668--669
  [] 
  []
 
-<images/tempo_real_antiga.png, id=248, 1882.03125pt x 960.58875pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<images/tempo_real_antiga.png, id=198, 1882.03125pt x 960.58875pt>
 File: images/tempo_real_antiga.png Graphic file (type png)
 <use images/tempo_real_antiga.png>
-Package pdftex.def Info: images/tempo_real_antiga.png  used on input line 494.
+Package pdftex.def Info: images/tempo_real_antiga.png  used on input line 681.
 (pdftex.def)             Requested size: 244.55144pt x 124.80763pt.
 
-Overfull \hbox (16.26064pt too wide) in paragraph at lines 494--495
+Overfull \hbox (16.26064pt too wide) in paragraph at lines 681--682
  [] 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.91998pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.91998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
-
-[8 <./images/despair.jpg> <./images/home_antiga.png> <./images/home_principal.png>]
-<images/tempo_real_novo.png, id=257, 1850.915pt x 959.585pt>
+<images/tempo_real_novo.png, id=200, 1850.915pt x 959.585pt>
 File: images/tempo_real_novo.png Graphic file (type png)
 <use images/tempo_real_novo.png>
-Package pdftex.def Info: images/tempo_real_novo.png  used on input line 504.
+Package pdftex.def Info: images/tempo_real_novo.png  used on input line 689.
 (pdftex.def)             Requested size: 244.55144pt x 126.77103pt.
 
-Overfull \hbox (16.26064pt too wide) in paragraph at lines 504--505
+Overfull \hbox (16.26064pt too wide) in paragraph at lines 689--690
  [] 
  []
 
-<images/help.jpeg, id=258, 738.76pt x 597.23125pt>
-File: images/help.jpeg Graphic file (type jpg)
-<use images/help.jpeg>
-Package pdftex.def Info: images/help.jpeg  used on input line 526.
-(pdftex.def)             Requested size: 146.73235pt x 118.61484pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.91998pt, for example:
@@ -975,18 +1422,49 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
 
-[9 <./images/tempo_real_antiga.png> <./images/tempo_real_novo.png> <./images/help.jpeg>]
-Underfull \hbox (badness 1609) in paragraph at lines 547--548
+[13 <./images/home_antiga.png> <./images/home_principal.png> <./images/tempo_real_antiga.png>]
+Underfull \hbox (badness 4378) in paragraph at lines 698--699
+\T1/ptm/m/n/12 serviços médi-cos e hos-pi-ta-lares. To-davia,
+ []
+
+File: images/tempo_real_novo.png Graphic file (type png)
+<use images/tempo_real_novo.png>
+Package pdftex.def Info: images/tempo_real_novo.png  used on input line 702.
+(pdftex.def)             Requested size: 244.55144pt x 126.77103pt.
+
+Overfull \hbox (16.26064pt too wide) in paragraph at lines 702--703
+ [] 
+ []
+
+<images/tempo_real_lighmode_nova.png, id=218, 1408.51219pt x 721.19438pt>
+File: images/tempo_real_lighmode_nova.png Graphic file (type png)
+<use images/tempo_real_lighmode_nova.png>
+Package pdftex.def Info: images/tempo_real_lighmode_nova.png  used on input line 710.
+(pdftex.def)             Requested size: 244.55144pt x 125.20949pt.
+
+Overfull \hbox (16.26064pt too wide) in paragraph at lines 710--711
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.91998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+
+[14 <./images/tempo_real_novo.png> <./images/tempo_real_lighmode_nova.png>]
+Underfull \hbox (badness 1609) in paragraph at lines 755--756
 []\T1/ptm/m/n/12 Os re-sul-ta-dos pre-lim-inares in-dicam uma
  []
 
 
-Underfull \hbox (badness 1990) in paragraph at lines 549--550
+Underfull \hbox (badness 1990) in paragraph at lines 757--758
 []\T1/ptm/m/n/12 As im-pli-cações fu-turas dessa tec-nolo-gia
  []
 
 
-Underfull \hbox (badness 2635) in paragraph at lines 549--550
+Underfull \hbox (badness 2635) in paragraph at lines 757--758
 \T1/ptm/m/n/12 evi-tando so-bre-car-gas em de-ter-mi-na-dos lo-
  []
 
@@ -997,7 +1475,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.28603pt}.
 
-[10]
+[15]
 No file relatorio.bbl.
 
 ** Conference Paper **
@@ -1012,34 +1490,44 @@ Before submitting the final camera ready copy, remember to:
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.91998pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.91998pt}.
+(fancyhdr)                Make it at least 14.28603pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.28603pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.91998pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.28603pt}.
 
-[11
+[16
 
 ] (./relatorio.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 33114D89C5AFF7D7E1C591E4474237E1;4198.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `relatorio.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `relatorio.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  657A1B9BD4EB4E615F3031BF895FE99D;3879.
  ) 
 Here is how much of TeX's memory you used:
- 15477 strings out of 474116
- 240653 string characters out of 5743683
- 2018187 words of memory out of 5000000
- 37494 multiletter control sequences out of 15000+600000
+ 15682 strings out of 474116
+ 242748 string characters out of 5743683
+ 2207187 words of memory out of 5000000
+ 37645 multiletter control sequences out of 15000+600000
  658508 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,11n,93p,1039b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (11 pages, 1658042 bytes).
+ 79i,11n,93p,1070b,1802s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (16 pages, 1414640 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 116 named destinations out of 1000 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 329 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

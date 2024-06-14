@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1718317151.119 0
+["bibtex relatorio"] 0 "relatorio.aux" "relatorio.bbl" "relatorio" 1718327798.26604 0
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1440712899 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
   "references.bib" 0 -1 0 ""
   "relatorio.aux" 0 -1 0 "pdflatex"
@@ -7,8 +7,8 @@
   "relatorio.bbl"
   "relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1718317149.47083 "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex" "relatorio.pdf" "relatorio" 1718317151.11919 0
-  "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex" 1718317147.71281 42143 3775a48252d2c921fef5439e08d2c5b2 ""
+["pdflatex"] 1718327796.82424 "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex" "relatorio.pdf" "relatorio" 1718327798.26619 2
+  "/Users/lucas_gaspe/Desktop/periodos/terceiro-periodo/criativa/gws-report/relatorio.tex" 1718327796.3903 64579 b6cac4282406c02875a01a31b87a7e8a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -41,6 +41,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -136,18 +137,15 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1717492343.51848 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1717492299 8221435 86513c8c313e2979ccf93fc953c37103 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "images/despair.jpg" 1718315408.43012 87494 69c8e0ac48789d6ef937f65d20295055 ""
-  "images/help.jpeg" 1718315408.43042 54490 02d8ef80097479b1cc465d046b7affae ""
   "images/home_antiga.png" 1718315408.43563 1258239 148b0e70dafa3b810bccc70907af4ec8 ""
   "images/home_principal.png" 1718315408.43633 154710 4cb7a37928b70a59613756f2d3a32688 ""
   "images/tempo_real_antiga.png" 1718315408.43893 55961 9f62da51e70ca67a952081b915f045eb ""
+  "images/tempo_real_lighmode_nova.png" 1718315408.43974 69868 9ad7ea3317432af3e1eb00b9839ae9d0 ""
   "images/tempo_real_novo.png" 1718315408.44016 104927 0fc8277acd570fcc1153511735dc9ce2 ""
-  "images/title-block.png" 1718315408.44069 119855 743121586d828e9e42187f3ada319811 ""
-  "images/user-card.png" 1718315408.44135 163890 fffc2a4532d32f2248e065fc46b0720d ""
-  "relatorio.aux" 1718317150.69942 6355 1e1e500db076cbd30b9934d61099d7d7 "pdflatex"
+  "relatorio.aux" 1718327798.00324 8865 f8002780fd49bdf3a615604545d527cb "pdflatex"
   "relatorio.bbl" 0 -1 0 "bibtex relatorio"
-  "relatorio.out" 1718317150.70039 4198 33114d89c5aff7d7e1c591e4474237e1 "pdflatex"
-  "relatorio.tex" 1718317147.71281 42143 3775a48252d2c921fef5439e08d2c5b2 ""
+  "relatorio.out" 1718327798.004 3879 657a1b9bd4eb4e615f3031bf895fe99d "pdflatex"
+  "relatorio.tex" 1718327796.3903 64579 b6cac4282406c02875a01a31b87a7e8a ""
   (generated)
   "relatorio.aux"
   "relatorio.log"
